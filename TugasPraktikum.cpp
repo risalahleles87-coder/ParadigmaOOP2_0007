@@ -77,3 +77,36 @@ public:
     }
 };
 
+int main() {
+
+    // Membuat object
+    RekeningSyariah syariah("Risalah", 5000000);
+    RekeningKonvensional konvensional("Magadina", 3000000);
+    RekeningPremium premium("Leles", 8000000);
+    RekeningPremium premiumVIP("Risa", 15000000);
+
+    // Pointer abstract class
+    RekeningBank* rekening;
+
+    // Rekening Syariah
+    rekening = &syariah;
+    rekening->potongAdmin();
+    rekening->tampilkanSaldo();
+
+    // Rekening Konvensional
+    rekening = &konvensional;
+    rekening->potongAdmin();
+    rekening->tampilkanSaldo();
+
+    // Rekening Premium saldo <= 10 juta
+    rekening = &premium;
+    rekening->potongAdmin();
+    rekening->tampilkanSaldo();
+
+    // Rekening Premium saldo > 10 juta
+    rekening = &premiumVIP;
+    rekening->potongAdmin();
+    rekening->tampilkanSaldo();
+
+    return 0;
+}
