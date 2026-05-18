@@ -26,3 +26,18 @@ public:
         cout << "-----------------------------" << endl;
     }
 };
+
+// Derived Class Rekening Syariah
+class RekeningSyariah : public RekeningBank {
+public:
+    RekeningSyariah(string nama, double saldoAwal)
+        : RekeningBank(nama, saldoAwal) {}
+
+    void potongAdmin() override {
+        cout << "=== BANK GIBRAN JAYA ===" << endl;
+        cout << "-----------------------------" << endl;
+
+        cout << "Rekening Syariah bebas biaya admin" << endl;
+    }
+};
+
